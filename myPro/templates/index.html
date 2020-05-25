@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <h1>The result of your command is : </h1>
+    <textarea id="results" class="form-control mb-5 border border-dark" style="font-size: 20px; line-height: 12px;"
+        id="" cols="30" rows="30">
+
+                            {% if data %}
+                            {% for line in data %}
+                            {{ line }}
+                            {% endfor %}
+                            {% endif %}
+        </textarea>
+    <form method="POST" style="width: 50%;"> {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-lg btn-primary w-75" type="submit" value="Save The Command" />
+    </form>
+    <button class="btn btn-lg btn-success mt-2" style="width:205px" onclick="location.href='{% url 'script' %}'">Get
+        Results?</button>
+    <button class="btn btn-lg btn-danger mt-2" style="width:205px" onclick="clear_()">Clear</button>
+</div>
+
+{% endblock %}
