@@ -1,5 +1,6 @@
 # online-terminal
-You can run this using ,
-----------------------------------
-python3 manage.py runserver
-----------------------------------
+
+      You can run this project using following command.
+      ------------------------------------------------
+      python3 manage.py runserver
+      ------------------------------------------------
